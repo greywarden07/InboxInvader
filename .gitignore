@@ -55,4 +55,6 @@ Thumbs.db
 # Environment
 .env
 .env.local
-.env.*.local
+.env.development.local
+.env.test.local
+# Note: .env.production is tracked for deployment configuration

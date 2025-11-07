@@ -12,6 +12,8 @@ import {
 import { Login as LoginIcon } from '@mui/icons-material'
 import axios from 'axios'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+
 export default function LoginForm({ onLoginSuccess, onSwitchToSignup }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -24,7 +26,7 @@ export default function LoginForm({ onLoginSuccess, onSwitchToSignup }) {
     setError('')
 
     try {
-      const res = await axios.post('http://localhost:5000/login', {
+      const res = await axios.post(`${API_URL}/login`, {
         username,
         password,
       })

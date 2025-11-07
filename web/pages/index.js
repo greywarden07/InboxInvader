@@ -55,6 +55,9 @@ import SignupForm from '../components/SignupForm'
 import TemplateManager from '../components/TemplateManager'
 import EmailPreview from '../components/EmailPreview'
 
+// API URL configuration
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+
 export default function Home() {
   // Auth state
   const [token, setToken] = useState(null)
@@ -165,7 +168,7 @@ export default function Home() {
     attachments.forEach((f) => fd.append('attachments', f))
 
     try {
-      const res = await axios.post('http://localhost:5000/send', fd, {
+      const res = await axios.post(`${API_URL}/send`, fd, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`,
@@ -192,7 +195,7 @@ export default function Home() {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/export-csv',
+        `${API_URL}/export-csv`,
         { results: results.results },
         {
           headers: {

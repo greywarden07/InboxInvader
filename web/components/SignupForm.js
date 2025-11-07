@@ -12,6 +12,8 @@ import {
 import { PersonAdd as SignupIcon } from '@mui/icons-material'
 import axios from 'axios'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+
 export default function SignupForm({ onSignupSuccess, onSwitchToLogin }) {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -41,7 +43,7 @@ export default function SignupForm({ onSignupSuccess, onSwitchToLogin }) {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/signup', {
+      const res = await axios.post(`${API_URL}/signup`, {
         username,
         email,
         password,

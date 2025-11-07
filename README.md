@@ -2,6 +2,12 @@
 
 A full-featured web application for sending bulk emails with **authentication**, **dark mode**, **email templates**, **variable substitution**, **CSV export**, and **detailed tracking**. Built with Flask (backend) and Next.js + Material-UI (frontend).
 
+## 🌐 Live Deployment
+
+**Want to deploy this app?** See **[VERCEL_QUICKSTART.md](VERCEL_QUICKSTART.md)** for step-by-step instructions to deploy:
+- Backend → Render (free tier)
+- Frontend → Vercel (free tier)
+
 ## 🚀 Features
 
 ### Core Features

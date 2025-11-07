@@ -24,6 +24,8 @@ import {
 } from '@mui/icons-material'
 import axios from 'axios'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+
 export default function TemplateManager({ open, onClose, onLoadTemplate, token }) {
   const [templates, setTemplates] = useState([])
   const [templateName, setTemplateName] = useState('')
@@ -43,7 +45,7 @@ export default function TemplateManager({ open, onClose, onLoadTemplate, token }
     setLoading(true)
     setError('')
     try {
-      const res = await axios.get('http://localhost:5000/templates', {
+      const res = await axios.get(`${API_URL}/templates`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (res.data.success) {
@@ -65,7 +67,7 @@ export default function TemplateManager({ open, onClose, onLoadTemplate, token }
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/templates',
+        `${API_URL}/templates`,
         {
           name: templateName,
           subject: templateSubject,
@@ -94,7 +96,7 @@ export default function TemplateManager({ open, onClose, onLoadTemplate, token }
     if (!confirm('Are you sure you want to delete this template?')) return
 
     try {
-      await axios.delete(`http://localhost:5000/templates/${id}`, {
+      await axios.delete(`${API_URL}/templates/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       loadTemplates()
