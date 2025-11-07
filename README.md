@@ -4,9 +4,17 @@ A full-featured web application for sending bulk emails with **authentication**,
 
 ## 🌐 Live Deployment
 
-**Want to deploy this app?** See **[VERCEL_QUICKSTART.md](VERCEL_QUICKSTART.md)** for step-by-step instructions to deploy:
-- Backend → Render (free tier)
-- Frontend → Vercel (free tier)
+**Want to deploy this app?** Choose your deployment guide:
+
+- **[RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md)** ⭐ **RECOMMENDED** - Email sending works on free tier!
+  - Backend → Railway (free $5 credit/month)
+  - Frontend → Vercel (free tier)
+  - ✅ SMTP works out of the box
+
+- **[VERCEL_QUICKSTART.md](VERCEL_QUICKSTART.md)** - Alternative option
+  - Backend → Render (free tier)
+  - Frontend → Vercel (free tier)  
+  - ⚠️ SMTP blocked, requires SendGrid API
 
 ## 🚀 Features
 
